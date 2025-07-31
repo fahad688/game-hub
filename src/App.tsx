@@ -1,6 +1,7 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
+import NavBar from "./components/NavBar";
 import {
   Box,
   Grid,
@@ -18,10 +19,8 @@ function App() {
       }}
     >
       {/* Navigation */}
-      <GridItem area="nav" bg="teal.500" px={6} py={4} color="white">
-        <Text fontSize="xl" fontWeight="bold">
-          Navigation
-        </Text>
+      <GridItem area="nav">
+        <NavBar></NavBar>
       </GridItem>
 
       {/* Aside (Sidebar) */}
