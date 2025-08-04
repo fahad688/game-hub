@@ -8,6 +8,7 @@ import { CanceledError } from "axios";
     background_image: string;
     released: string;
     rating: number;
+    metacritic: number;
   }
 
   interface fetchGamesResponse {
