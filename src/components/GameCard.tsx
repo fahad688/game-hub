@@ -17,15 +17,7 @@ interface Props {
 
 const GameCard = ({ game }: Props) => {
   return (
-    <Card.Root
-      width="300px"
-      borderRadius="lg"
-      overflow="hidden"
-      boxShadow="md"
-      _hover={{ transform: "scale(1.02)", transition: "0.3s" }}
-      bg="white"
-      _dark={{ bg: "gray.800" }}
-    >
+    <Card.Root>
       <Image
         src={game.background_image}
         alt={game.name}

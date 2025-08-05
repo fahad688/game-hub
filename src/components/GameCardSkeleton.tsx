@@ -8,14 +8,7 @@ import {
 
 const GameCardSkeleton = () => {
   return (
-    <Card.Root
-      width="300px"
-      borderRadius="lg"
-      overflow="hidden"
-      boxShadow="md"
-      bg="white"
-      _dark={{ bg: "gray.800" }}
-    >
+    <Card.Root>
       <Skeleton height="200px" width="100%" />
 
       <CardBody>
