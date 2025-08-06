@@ -5,7 +5,7 @@ import GameCardSkeleton from "./GameCardSkeleton";
 import { GameCardContainer } from "./GameCardContainer";
 
 const GameList = () => {
-  const { games, error, loading } = useGame();
+  const { data, error, loading } = useGame();
 
   return (
     <div>
@@ -23,7 +23,7 @@ const GameList = () => {
                 </GameCardContainer>
               ))
           : // Show real game cards when data is loaded
-            games.map((game) => (
+            data.map((game) => (
               <GameCardContainer>
                 <GameCard key={game.id} game={game} />
               </GameCardContainer>
