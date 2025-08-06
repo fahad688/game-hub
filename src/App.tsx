@@ -10,6 +10,7 @@ import {
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
+import GenreList from "./components/GenreList";
 
 function App() {
   return (
@@ -26,8 +27,7 @@ function App() {
 
       {/* Aside (Sidebar) */}
       <GridItem area="aside">
-        <Text>Dashboard</Text>
-        <Text>Settings</Text>
+        <GenreList />
       </GridItem>
 
       {/* Main Content */}
