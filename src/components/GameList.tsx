@@ -3,9 +3,14 @@ import useGame from "@/hooks/useGame";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import { GameCardContainer } from "./GameCardContainer";
+import { Genre } from "@/hooks/useGenre";
 
-const GameList = () => {
-  const { data, error, loading } = useGame();
+interface Props {
+  selectedGenre: Genre | null;
+}
+
+const GameList = ({ selectedGenre }: Props) => {
+  const { data, error, loading } = useGame(selectedGenre);
 
   return (
     <div>
@@ -17,15 +22,15 @@ const GameList = () => {
             Array(6)
               .fill(0)
               .map((_, i) => (
-                <GameCardContainer>
+                <GameCardContainer key={i}>
                   {" "}
-                  <GameCardSkeleton key={i} />
+                  <GameCardSkeleton />
                 </GameCardContainer>
               ))
           : // Show real game cards when data is loaded
             data.map((game) => (
-              <GameCardContainer>
-                <GameCard key={game.id} game={game} />
+              <GameCardContainer key={game.id}>
+                <GameCard game={game} />
               </GameCardContainer>
             ))}
       </SimpleGrid>
