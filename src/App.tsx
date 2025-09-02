@@ -24,7 +24,10 @@ function App() {
 
       {/* Sidebar */}
       <GridItem area="aside" p={2}>
-        <GenreList onSelectGenre={(genre) => setSelectedGenre(genre)} />
+        <GenreList
+          selectedGenre={selectedGenre}
+          onSelectGenre={(genre) => setSelectedGenre(genre)}
+        />
       </GridItem>
 
       {/* Main Content */}
