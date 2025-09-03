@@ -12,12 +12,13 @@ export interface Game {
 }
 
 
-const useGame = (selectedGenre: Genre | null,selectedPlatform: Platform | null,selectedSortOder: string | null) => useData<Game>("/games", {
+const useGame = (selectedGenre: Genre | null,selectedPlatform: Platform | null,selectedSortOder: string | null,searchText: string | null) => useData<Game>("/games", {
   params: {
     genres: selectedGenre?.id,
     platforms: selectedPlatform?.id,
-    ordering: selectedSortOder
+    ordering: selectedSortOder,
+    search: searchText,
   },
-}, [selectedGenre?.id,selectedPlatform?.id,selectedSortOder] );
+}, [selectedGenre?.id,selectedPlatform?.id,selectedSortOder,searchText] );
 
 export default useGame;

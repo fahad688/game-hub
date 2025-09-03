@@ -13,6 +13,8 @@ function App() {
    const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
    const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(null);
    const [selectedSortOder, setSelectedSortOder] = useState<string | null>(null);
+   const [searchText, setSearchText] = useState<string>("");
+
   return (
     <Grid
       templateAreas={{
@@ -25,7 +27,8 @@ function App() {
     >
       {/* Navigation */}
       <GridItem area="nav">
-        <NavBar />
+        <NavBar onSearch={(text) => setSearchText(text)} />
+        {/* pass callback */}
       </GridItem>
 
       {/* Sidebar */}
@@ -53,6 +56,7 @@ function App() {
           selectedGenre={selectedGenre}
           selectedPlatform={selectedPlatform}
           selectedSortOder={selectedSortOder}
+          searchText={searchText}
         />
       </GridItem>
     </Grid>

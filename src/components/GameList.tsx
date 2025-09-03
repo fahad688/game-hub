@@ -10,17 +10,20 @@ interface Props {
   selectedGenre: Genre | null;
   selectedPlatform: Platform | null;
   selectedSortOder: string | null;
+  searchText: string | null;
 }
 
 const GameList = ({
   selectedGenre,
   selectedPlatform,
   selectedSortOder,
+  searchText,
 }: Props) => {
   const { data, error, loading } = useGame(
     selectedGenre,
     selectedPlatform,
-    selectedSortOder
+    selectedSortOder,
+    searchText
   );
 
   return (

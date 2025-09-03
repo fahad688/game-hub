@@ -8,6 +8,7 @@ import {
   Box,
   Badge,
 } from "@chakra-ui/react";
+import noImage from "../assets/noimage.jpg";
 import type { Game } from "@/hooks/useGame";
 import GameScore from "./GameScore";
 
@@ -19,7 +20,7 @@ const GameCard = ({ game }: Props) => {
   return (
     <Card.Root>
       <Image
-        src={game.background_image}
+        src={game.background_image || noImage} // ✅ fallback to noImage
         alt={game.name}
         objectFit="cover"
         height="200px"
