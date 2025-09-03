@@ -1,10 +1,14 @@
 // src/components/PlatformSelector.tsx
-import usePlatform from "@/hooks/usePlatform";
+import usePlatform, { Platform } from "@/hooks/usePlatform";
 import { Button, Menu, Portal, Spinner } from "@chakra-ui/react";
 import { useState } from "react";
 import { HiCog } from "react-icons/hi";
 
-const PlatformSelector = () => {
+interface Props {
+  onSelectPlatform: (Platform: Platform) => void;
+}
+
+const PlatformSelector = ({ onSelectPlatform }: Props) => {
   const { data: platforms, loading, error } = usePlatform();
   const [selected, setSelected] = useState<string>("");
 
@@ -29,6 +33,7 @@ const PlatformSelector = () => {
               <Menu.Item
                 key={platform.id}
                 value={platform.slug}
+                onClick={() => onSelectPlatform(platform)}
                 className="px-3 py-2 hover:bg-gray-100 rounded cursor-pointer"
               >
                 {platform.name}
