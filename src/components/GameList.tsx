@@ -7,12 +7,21 @@ import { Genre } from "@/hooks/useGenre";
 import { Platform } from "@/hooks/usePlatform";
 
 interface Props {
-  selectedGenre: Genre | null,
+  selectedGenre: Genre | null;
   selectedPlatform: Platform | null;
+  selectedSortOder: string | null;
 }
 
-const GameList = ({ selectedGenre, selectedPlatform }: Props) => {
-  const { data, error, loading } = useGame(selectedGenre, selectedPlatform);
+const GameList = ({
+  selectedGenre,
+  selectedPlatform,
+  selectedSortOder,
+}: Props) => {
+  const { data, error, loading } = useGame(
+    selectedGenre,
+    selectedPlatform,
+    selectedSortOder
+  );
 
   return (
     <div>

@@ -10,8 +10,9 @@ import SortSelector from "./components/SortSelector";
 
 
 function App() {
-  const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
+   const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
    const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(null);
+   const [selectedSortOder, setSelectedSortOder] = useState<string | null>(null);
   return (
     <Grid
       templateAreas={{
@@ -43,11 +44,15 @@ function App() {
               onSelectPlatform={(platform) => setSelectedPlatform(platform)}
             />
           </Box>
-          <SortSelector />
+          <SortSelector
+            onSelectSortOrder={(sortOrder) => setSelectedSortOder(sortOrder)}
+            selectedSortOder={selectedSortOder}
+          />
         </HStack>
         <GameList
-          selectedPlatform={selectedPlatform}
           selectedGenre={selectedGenre}
+          selectedPlatform={selectedPlatform}
+          selectedSortOder={selectedSortOder}
         />
       </GridItem>
     </Grid>
