@@ -16,7 +16,6 @@ const GameList = ({ selectedGenre, selectedPlatform }: Props) => {
 
   return (
     <div>
-      <h1>Game List</h1>
       {error && <Text>{error}</Text>}
       <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={6} p={6}>
         {loading
