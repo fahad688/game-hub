@@ -7,6 +7,7 @@ import { useState } from "react";
 import { Genre } from "./hooks/useGenre";
 import { Platform } from "./hooks/usePlatform";
 import SortSelector from "./components/SortSelector";
+import GameHeading from "./components/GameHeading";
 
 
 function App() {
@@ -41,6 +42,13 @@ function App() {
 
       {/* Main Content */}
       <GridItem area="main">
+        <Box pl={6} pb={3}>
+          <GameHeading
+            selectedGenre={selectedGenre}
+            selectedPlatform={selectedPlatform}
+          />
+        </Box>
+
         <HStack>
           <Box pl={6}>
             <PlatformSelector
